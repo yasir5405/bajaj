@@ -1,0 +1,12 @@
+node_modules
+dist
+.env
+*.log
+.DS_Store
+coverage
+.vscode
+test-api.ts
+test-edge-cases.ts
+test-gemini.ts
+README.md
+GEMINI_SETUP.md 
