@@ -1,7 +1,7 @@
 {
-  "name": "bajaj-bfhl-api",
+  "name": "bajaj",
   "version": "1.0.0",
-  "description": "BFHL API - Bajaj Finserv Health Challenge REST API",
+  "description": "Bajaj BFHL api",
   "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon",
@@ -19,7 +19,7 @@
     "typescript",
     "express"
   ],
-  "author": "",
+  "author": "Yasir Naseem",
   "license": "ISC",
   "packageManager": "pnpm@10.25.0",
   "devDependencies": {
