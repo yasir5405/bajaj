@@ -1,6 +1,5 @@
 import { z } from "zod";
 
-// Individual operation schemas
 export const fibonacciSchema = z.object({
   fibonacci: z.number().int().nonnegative(),
 });
@@ -21,7 +20,6 @@ export const aiSchema = z.object({
   AI: z.string().min(1),
 });
 
-// Union schema that accepts exactly one key
 export const bfhlRequestSchema = z.union([
   fibonacciSchema,
   primeSchema,
@@ -30,7 +28,6 @@ export const bfhlRequestSchema = z.union([
   aiSchema,
 ]);
 
-// Type exports
 export type FibonacciRequest = z.infer<typeof fibonacciSchema>;
 export type PrimeRequest = z.infer<typeof primeSchema>;
 export type LcmRequest = z.infer<typeof lcmSchema>;
@@ -38,8 +35,10 @@ export type HcfRequest = z.infer<typeof hcfSchema>;
 export type AIRequest = z.infer<typeof aiSchema>;
 export type BfhlRequest = z.infer<typeof bfhlRequestSchema>;
 
-// Helper function to validate that only one key exists
 export const validateSingleKey = (data: any): boolean => {
   const keys = Object.keys(data);
-  return keys.length === 1 && ["fibonacci", "prime", "lcm", "hcf", "AI"].includes(keys[0]);
+  return (
+    keys.length === 1 &&
+    ["fibonacci", "prime", "lcm", "hcf", "AI"].includes(keys[0])
+  );
 };
